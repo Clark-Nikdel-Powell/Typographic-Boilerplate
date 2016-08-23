@@ -1,0 +1,86 @@
+@charset "UTF-8";/*——————————————————————————————————————————
+/  Import Files
+——————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Vertical Rhythm Overlay
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Color Bar
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  CSS By Breakpoint
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Do Something Over Breakpoints
+——————————————————————————————————————————————————————————————————————————————
+Say you've got a variable that changes based on the breakpoint. Whether you're dealing
+with a vertical rhythm unit or a site margin, you can layer other mixins on top of this
+one to have a simple loop. Hopefully it'll keep our CSS By Breakpoint definitions shorter.
+*//*——————————————————————————————————————————————————————————————————————————————
+/  Flexible Font Sizes
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Font Face
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Font Smoothing
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Striped Gradient
+——————————————————————————————————————————————————————————————————————————————
+@author Hugo Giraudel
+@param {Direction} $direction - Gradient direction
+@param {List} $colors - List of colors
+@output `background-image` if several colors, `background-color` if only one
+*//*——————————————————————————————————————————————————————————————————————————————
+/  Placeholder
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Proportional Vertical Rhythm
+——————————————————————————————————————————————————————————————————————————————
+Like responsive vertical rhythm, but takes the amount in pixels, rather than an amount in VR units.
+Useful when you know the pixel value and a specific breakpoint, but not the VR value.
+The function calculates the amount of vertical rhythm based on the pixel equivalent of a base breakpoint.
+For instance, if something is meant to have 50px of padding-top on a large breakpoint of 1024px, the proportional
+pixel equivalent at the 768px breakpoint would be 37.5px ( 50 * 768 ) / 1024.
+*//*——————————————————————————————————————————————————————————————————————————————
+/  Round Up Vertical Rhythm
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Set Responsive Font Sizes and Line Heights by Group
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Set Font Sizes and Line Heights By Tag
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Site Margin
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  Vertical Rhythm
+——————————————————————————————————————————————————————————————————————————————*//*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*//**
+ * Foundation for Sites by ZURB
+ * Version 6.2.3
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ *//*——————————————————————————————————————————————————————————————————————————————
+/  RESET
+——————————————————————————————————————————————————————————————————————————————*/html,body {margin: 0;padding: 0;}h1,h2,h3,h4,h5,h6,p,ul,ol,blockquote,pre,code,dl,dt,dd {margin: 0;padding: 0;}a {color: currentColor;text-decoration: none;}/*——————————————————————————————————————————————————————————————————————————————
+/  VARIABLES
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————
+/  Vertical Rhythm
+——————————————————————————————————————————*//*——————————————————————————————————————————
+/  Colors
+——————————————————————————————————————————*//*——————————————————————————————————————————
+/  Font Declarations & Sizes
+——————————————————————————————————————————*/.btn,.btn--isNavy {font-family: sans-serif;}/*——————————————————————————————————————————————————————————————————————————————
+/  MIXINS
+——————————————————————————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————
+/  Button Mixins
+——————————————————————————————————————————————————————————*/.btn,.btn--isNavy {display: inline-block;font-size: 1.25em;padding: 0.8em 1.2em 0.6em;line-height: 1;text-align: center;text-decoration: none;}.btn--isNavy {color: #fff;background-color: #005a7a;border: 2px solid #005a7a;}.btn--isNavy:hover {color: #fff;background-color: #fdcc77;}.btn--isNavy:hover {border-color: #fee8c3;}.btn--isNavy.btn--isEmpty {background-color: transparent;border: 2px solid #005a7a;color: #005a7a;}/*——————————————————————————————————————————————————————————
+/  HEADER MIXINS
+——————————————————————————————————————————————————————————*//*——————————————————————————————————————————————————————————————————————————————
+/  STYLES
+——————————————————————————————————————————————————————————————————————————————*/body {position: relative;}body:before {position: absolute;width: 100%;height: 100%;z-index: 9999;content: '';display: block;pointer-events: none;top: 0;right: 0;bottom: 0;left: 0;background: linear-gradient(transparent, transparent 21px, #f00) repeat-y;background-size: 100% 22px;}h1 {margin-bottom: 1.375rem;color: #000;}h2 {margin-bottom: 0.6875rem;color: #000;}h3 {margin-bottom: 0.6875rem;color: #000;}h4 {margin-bottom: 0.6875rem;color: #000;}h5 {margin-bottom: 0.6875rem;color: #000;}h6 {margin-bottom: 0.6875rem;color: #000;}/*——————————————————————————————————————————————————————————————————————————————
+/  CONTENT-SPECIFIC TYPOGRAPHY STYLES
+——————————————————————————————————————————————————————————————————————————————*/.postcontent { /*——————————————————————————————————————————
+	/  Paragraph Styles
+	——————————————————————————————————————————*/ /*——————————————————————————————————————————
+	/  List Styles
+	——————————————————————————————————————————*/ /*——————————————————————————————————————————
+	/  DL Styles
+	——————————————————————————————————————————*/ /*——————————————————————————————————————————
+	/  Blockquote Styles
+	——————————————————————————————————————————*/}.postcontent h1 {font-size: 2.625rem;line-height: 2.75rem;}.postcontent h2 {font-size: 1.625rem;line-height: 2.75rem;}.postcontent h3 {font-size: 1.25rem;line-height: 1.375rem;}.postcontent h4 {font-size: 1rem;line-height: 1.375rem;}.postcontent h5 {font-size: 0.875rem;line-height: 1.375rem;}.postcontent h6 {font-size: 0.75rem;line-height: 1.375rem;}.postcontent p {font-size: 1rem;line-height: 1.375rem;}.postcontent h1,.postcontent h2,.postcontent h4,.postcontent h5,.postcontent h6 {margin-bottom: 1.375rem;}.postcontent h2 {margin-top: 2.0625rem;margin-bottom: 1.71875rem;}.postcontent h3 {margin-top: 2.0625rem;margin-bottom: 1.03125rem;}.postcontent p,.postcontent ul,.postcontent ol {margin-bottom: 1.375rem;font-size: 1rem;line-height: 1.375rem;}.postcontent ul,.postcontent ol {margin-left: 1.25em;}.postcontent ul ul,.postcontent ul ol,.postcontent ol ul,.postcontent ol ol {margin-top: 0;}.postcontent li {margin-bottom: 1.375rem;}.postcontent ul {margin-left: 1.25rem;}.postcontent dl {display: none;}.postcontent blockquote {margin-left: 2em;margin-right: 2em;padding-left: 1em;border-left: 5px solid #000;}.postcontent a:not([class]) {color: #005a7a;border-bottom: 1px solid #005a7a;}.postcontent a:not([class]):hover {border-bottom-color: #fdcc77;color: #fdcc77;}@media screen and (min-width: 40em) {body {position: relative;}body:before {position: absolute;width: 100%;height: 100%;z-index: 9999;content: '';display: block;pointer-events: none;top: 0;right: 0;bottom: 0;left: 0;background: linear-gradient(transparent, transparent 23px, #f00) repeat-y;background-size: 100% 24px;}h1 {margin-bottom: 1.5rem;}h2 {margin-bottom: 1.5rem;}h3 {margin-bottom: 0.75rem;}h4 {margin-bottom: 0.75rem;}h5 {margin-bottom: 0.75rem;}h6 {margin-bottom: 0.75rem;}.postcontent h1 {font-size: 2.875rem;line-height: 3rem;}.postcontent h2 {font-size: 2rem;line-height: 3rem;}.postcontent h3 {font-size: 1.3125rem;line-height: 1.5rem;}.postcontent h4 {font-size: 1.125rem;line-height: 1.5rem;}.postcontent h5 {font-size: 1rem;line-height: 1.5rem;}.postcontent h6 {font-size: 0.875rem;line-height: 1.5rem;}.postcontent p {font-size: 1.125rem;line-height: 1.5rem;}.postcontent h1,.postcontent h2,.postcontent h4,.postcontent h5,.postcontent h6 {margin-bottom: 1.5rem;}.postcontent h2 {margin-top: 3rem;}.postcontent h2 {margin-bottom: 1.5rem;}.postcontent h3 {margin-top: 2.25rem;}.postcontent h3 {margin-bottom: 0.75rem;}.postcontent p,.postcontent ul,.postcontent ol {margin-bottom: 1.5rem;}.postcontent p,.postcontent ul,.postcontent ol {font-size: 1.125rem;line-height: 1.5rem;}.postcontent ul ul,.postcontent ul ol,.postcontent ol ul,.postcontent ol ol {margin-top: 0;}.postcontent li {margin-bottom: 1.5rem;}}@media screen and (min-width: 64em) {body {position: relative;}body:before {position: absolute;width: 100%;height: 100%;z-index: 9999;content: '';display: block;pointer-events: none;top: 0;right: 0;bottom: 0;left: 0;background: linear-gradient(transparent, transparent 29px, #f00) repeat-y;background-size: 100% 30px;}h1 {margin-bottom: 1.875rem;}h2 {margin-bottom: 1.875rem;}h3 {margin-bottom: 0.9375rem;}h4 {margin-bottom: 0.9375rem;}h5 {margin-bottom: 0.9375rem;}h6 {margin-bottom: 0.9375rem;}.postcontent h1 {font-size: 3.25rem;line-height: 3.75rem;}.postcontent h2 {font-size: 2.75rem;line-height: 2.8125rem;}.postcontent h3 {font-size: 1.875rem;line-height: 1.875rem;}.postcontent h4 {font-size: 1.25rem;line-height: 1.875rem;}.postcontent h5 {font-size: 1.125rem;line-height: 1.875rem;}.postcontent h6 {font-size: 1rem;line-height: 1.875rem;}.postcontent p {font-size: 1.25rem;line-height: 1.875rem;}.postcontent h1,.postcontent h2,.postcontent h4,.postcontent h5,.postcontent h6 {margin-bottom: 1.875rem;}.postcontent h2 {margin-top: 3.75rem;}.postcontent h2 {margin-bottom: 1.40625rem;}.postcontent h3 {margin-top: 3.28125rem;}.postcontent h3 {margin-bottom: 1.40625rem;}.postcontent p,.postcontent ul,.postcontent ol {margin-bottom: 1.875rem;}.postcontent p,.postcontent ul,.postcontent ol {font-size: 1.25rem;line-height: 1.875rem;}.postcontent ul ul,.postcontent ul ol,.postcontent ol ul,.postcontent ol ol {margin-top: 0;}.postcontent li {margin-bottom: 1.875rem;}}

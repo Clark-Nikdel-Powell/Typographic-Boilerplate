@@ -1,0 +1,26 @@
+{
+  "name": "cnp-typography-system",
+  "version": "1.0.0",
+  "description": "Typography system framework.",
+  "author": "CNP <wordpress@clarknikdelpowell.com>",
+  "scripts": {},
+  "keywords": [
+    "foundation"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "foundation-sites": "^6.0",
+    "scut": "davidtheclark/scut",
+    "cnp-scss-snippets": "1.4.1",
+    "gulp": "*",
+    "browser-sync": "*",
+    "streamqueue": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-sass": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-combine-mq": "*"
+  },
+  "private": true,
+  "license": "MIT"
+}

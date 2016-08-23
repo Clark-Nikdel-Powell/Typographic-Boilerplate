@@ -1,0 +1,298 @@
+@import "node_modules/cnp-scss-snippets/import";
+@import "node_modules/scut/dist/scut";
+@import "node_modules/foundation-sites/scss/foundation";
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  RESET
+——————————————————————————————————————————————————————————————————————————————*/
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, code, dl, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  VARIABLES
+——————————————————————————————————————————————————————————————————————————————*/
+
+/*——————————————————————————————————————————
+/  Vertical Rhythm
+——————————————————————————————————————————*/
+$responsive-line-height: (
+	small: 22px,
+	medium: 24px,
+	large: 30px,
+);
+$vertical-rhythm-map: $responsive-line-height;
+
+/*——————————————————————————————————————————
+/  Colors
+——————————————————————————————————————————*/
+$navy: hsl(196, 100%, 24%); // #005C7E
+$gold-peach: hsl(38, 97%, 73%); // #fdcc77, #FDCD7A
+
+/*——————————————————————————————————————————
+/  Font Declarations & Sizes
+——————————————————————————————————————————*/
+%f_fontname {
+	font-family: sans-serif;
+}
+
+$fw-fontname-bd: 700;
+
+%f_otherfontname {
+	font-family: sans-serif;
+}
+
+$fw-otherfontname-bk: 400;
+$fw-otherfontname-bd: 700;
+
+$header-sizes-and-line-heights: (
+	small: (
+		'h1': ('fz': 42, 'lh': 2,),
+		'h2': ('fz': 26, 'lh': 2,),
+		'h3': ('fz': 20, 'lh': 1,),
+		'h4': ('fz': 16, 'lh': 1,),
+		'h5': ('fz': 14, 'lh': 1,),
+		'h6': ('fz': 12, 'lh': 1,),
+		'p': ('fz': 16, 'lh': 1,),
+	),
+	medium: (
+		'h1': ('fz': 46, 'lh': 2,),
+		'h2': ('fz': 32, 'lh': 2,),
+		'h3': ('fz': 21, 'lh': 1,),
+		'h4': ('fz': 18, 'lh': 1,),
+		'h5': ('fz': 16, 'lh': 1,),
+		'h6': ('fz': 14, 'lh': 1,),
+		'p': ('fz': 18, 'lh': 1,),
+	),
+	large: (
+		'h1': ('fz': 52, 'lh': 2,),
+		'h2': ('fz': 44, 'lh': 1.5,),
+		'h3': ('fz': 30, 'lh': 1,),
+		'h4': ('fz': 20, 'lh': 1,),
+		'h5': ('fz': 18, 'lh': 1,),
+		'h6': ('fz': 16, 'lh': 1,),
+		'p': ('fz': 20, 'lh': 1,),
+	),
+);
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  MIXINS
+——————————————————————————————————————————————————————————————————————————————*/
+
+/*——————————————————————————————————————————————————————————
+/  Button Mixins
+——————————————————————————————————————————————————————————*/
+.btn {
+	$module-prefix: '.btn';
+	@extend %f_fontname;
+	display: inline-block;
+	font-size: scut-em(20);
+	padding: scut-em(16, 20) scut-em(24, 20) scut-em(12, 20);
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+}
+
+@mixin btn($color, $background, $hover-color: $color, $hover-background: $background) {
+	@extend .btn;
+	color: $color;
+	background-color: $background;
+
+	&:hover {
+		color: $hover-color;
+		background-color: $hover-background;
+	}
+}
+
+.btn {
+	$module-prefix: '.btn';
+
+	&--isNavy {
+		@include btn(#fff, $navy, #fff, $gold-peach);
+		border: 2px solid $navy;
+
+		&:hover {
+			border-color: lighten($gold-peach, 15%);
+		}
+
+		&#{$module-prefix}--isEmpty {
+			background-color: transparent;
+			border: 2px solid $navy;
+			color: $navy;
+		}
+	}
+}
+
+/*——————————————————————————————————————————————————————————
+/  HEADER MIXINS
+——————————————————————————————————————————————————————————*/
+@mixin h1($color: #000) {
+	@include vertical_rhythm(margin-bottom, 1);
+	color: $color;
+}
+
+@mixin h2($color: #000) {
+	@include vertical_rhythm(margin-bottom, (.5, 1, 1));
+	color: $color;
+}
+
+@mixin h3($color: #000) {
+	@include vertical_rhythm((margin-bottom), .5);
+	color: $color;
+}
+
+@mixin h4($color: #000) {
+	@include vertical_rhythm((margin-bottom), .5);
+	color: $color;
+}
+
+@mixin h5($color: #000) {
+	@include vertical_rhythm((margin-bottom), .5);
+	color: $color;
+}
+
+@mixin h6($color: #000) {
+	@include vertical_rhythm((margin-bottom), .5);
+	color: $color;
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+body {
+	@include baseline_overlay_by_line_height();
+}
+
+h1 {
+	@include h1();
+}
+
+h2 {
+	@include h2();
+}
+
+h3 {
+	@include h3();
+}
+
+h4 {
+	@include h4();
+}
+
+h5 {
+	@include h5();
+}
+
+h6 {
+	@include h6();
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  CONTENT-SPECIFIC TYPOGRAPHY STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+// Content styles are set up in a mixin so that they can be manually included for
+// .postcontent and the editor styles.
+@mixin content_styles() {
+
+	@include set_responsive_font_sizes_and_line_heights_by_group($header-sizes-and-line-heights);
+
+	h1, h2, h4, h5, h6 {
+		@include vertical_rhythm(margin-bottom, 1);
+	}
+	// Used for post title
+	h1 {
+
+	}
+	h2 {
+		@include vertical_rhythm(margin-top, (1.5, 2));
+		@include vertical_rhythm(margin-bottom, (1.25, 1, .75, .75));
+	}
+	h3 {
+		@include vertical_rhythm(margin-top, (1.5, 1.5, 1.75, 1.5));
+		@include vertical_rhythm(margin-bottom, (.75, .5, .75, .625));
+	}
+	h4 {
+
+	}
+	h5 {
+
+	}
+	h6 {
+
+	}
+
+	p, ul, ol {
+		@include vertical_rhythm(margin-bottom, 1);
+
+		// This is doubling up a bit-- just for the font-size on the other tags.
+		@include set_responsive_font_sizes_and_line_heights_by_tag($header-sizes-and-line-heights, p);
+	}
+
+	/*——————————————————————————————————————————
+	/  Paragraph Styles
+	——————————————————————————————————————————*/
+	p {
+
+	}
+
+	/*——————————————————————————————————————————
+	/  List Styles
+	——————————————————————————————————————————*/
+	ul, ol {
+		margin-left: 1.25em;
+	}
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol {
+		@include vertical_rhythm(margin-top, 0);
+	}
+	li {
+		@include vertical_rhythm(margin-bottom, 1);
+	}
+	ul {
+		margin-left: 1.25rem;
+	}
+
+	/*——————————————————————————————————————————
+	/  DL Styles
+	——————————————————————————————————————————*/
+	dl {
+		display: none;
+	}
+
+	/*——————————————————————————————————————————
+	/  Blockquote Styles
+	——————————————————————————————————————————*/
+	blockquote {
+		margin-left: 2em;
+		margin-right: 2em;
+		padding-left: 1em;
+		border-left: 5px solid #000;
+	}
+
+	a:not([class]) {
+		color: $navy;
+		border-bottom: 1px solid $navy;
+
+		&:hover {
+			border-bottom-color: $gold-peach;
+			color: $gold-peach;
+		}
+	}
+}
+
+.postcontent {
+	@include content_styles();
+}
