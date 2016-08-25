@@ -28,63 +28,85 @@ a {
 /  Vertical Rhythm
 ——————————————————————————————————————————*/
 $responsive-line-height: (
-	small: 22px,
-	medium: 24px,
-	large: 30px,
+	small: 24px,
+	medium: 26px,
+	large: 28px,
 );
 $vertical-rhythm-map: $responsive-line-height;
 
 /*——————————————————————————————————————————
 /  Colors
 ——————————————————————————————————————————*/
-$navy: hsl(196, 100%, 24%); // #005C7E
-$gold-peach: hsl(38, 97%, 73%); // #fdcc77, #FDCD7A
+$navy: hsl(210, 96%, 20%); //023363
+$navy-dark: hsl(228, 97%, 12%); // #010D3D
+$blue: hsl(202, 73%, 50%); //2299DD
+$blue-bright: hsl(192, 100%, 45%); //00B5E3
+$blue-light: hsl(201, 60%, 68%); //7DBDDF
+$blue-dark: hsl(203, 67%, 40%); //2277AA
+$yellow: hsl(50, 93%, 56%); //#F7D429
+$yellow-light: hsl(50, 100%, 92%); //FFF8DA
+$gold: hsl(47, 96%, 53%); //FAC913
+$gold-dark: hsl(47, 99%, 44%); //E0B001
+$red: hsl(2, 78%, 56%); //E63F39
+$aquamarine: hsl(167, 63%, 56%); //48D6B7
+
+/*——————————————————————————————————————————
+/  Gradients
+——————————————————————————————————————————*/
+$gradient-blue-diagonal: linear-gradient(-140deg, #8CD7FF 0%, #67CAF1 50%, #3D95C3 100%);
+$gradient-blue-vertical: linear-gradient(-180deg, #30B4FF 0%, $blue 100%);
+$gradient-light-blue: linear-gradient(-180deg, #EDFAFF 0%, #C6EBFF 100%);
+$gradient-grey: linear-gradient(-180deg, #FFFFFF 4%, #EFEFEF 100%);
 
 /*——————————————————————————————————————————
 /  Font Declarations & Sizes
 ——————————————————————————————————————————*/
-%f_fontname {
-	font-family: sans-serif;
+
+@import 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i,700,700i';
+
+%f_fira_sans {
+	font-family: "Fira Sans", sans-serif;
 }
 
-$fw-fontname-bd: 700;
+$fw-fontname-semibold: 600;
+$fw-fontname-bold: 700;
 
-%f_otherfontname {
-	font-family: sans-serif;
-}
-
-$fw-otherfontname-bk: 400;
-$fw-otherfontname-bd: 700;
 
 $header-sizes-and-line-heights: (
 	small: (
-		'h1': ('fz': 42, 'lh': 2,),
-		'h2': ('fz': 26, 'lh': 2,),
-		'h3': ('fz': 20, 'lh': 1,),
-		'h4': ('fz': 16, 'lh': 1,),
-		'h5': ('fz': 14, 'lh': 1,),
-		'h6': ('fz': 12, 'lh': 1,),
+		'h1': ('fz': 36, 'lh': 1.5,),
+		'h2': ('fz': 24, 'lh': 1.5,),
+		'h3': ('fz': 20, 'lh': 1.25,),
+		'h4': ('fz': 18, 'lh': 1,),
+		'h5': ('fz': 16, 'lh': 1,),
+		'h6': ('fz': 14, 'lh': .75,),
 		'p': ('fz': 16, 'lh': 1,),
 	),
 	medium: (
-		'h1': ('fz': 46, 'lh': 2,),
-		'h2': ('fz': 32, 'lh': 2,),
-		'h3': ('fz': 21, 'lh': 1,),
-		'h4': ('fz': 18, 'lh': 1,),
-		'h5': ('fz': 16, 'lh': 1,),
-		'h6': ('fz': 14, 'lh': 1,),
-		'p': ('fz': 18, 'lh': 1,),
-	),
-	large: (
-		'h1': ('fz': 52, 'lh': 2,),
-		'h2': ('fz': 44, 'lh': 1.5,),
-		'h3': ('fz': 30, 'lh': 1,),
-		'h4': ('fz': 20, 'lh': 1,),
+		'h1': ('fz': 56, 'lh': 2.25,),
+		'h2': ('fz': 36, 'lh': 1.75,),
+		'h3': ('fz': 28, 'lh': 1.25,),
+		'h4': ('fz': 22, 'lh': 1,),
 		'h5': ('fz': 18, 'lh': 1,),
 		'h6': ('fz': 16, 'lh': 1,),
-		'p': ('fz': 20, 'lh': 1,),
+		'p': ('fz': 16, 'lh': 1,),
+	),
+	large: (
+		'h1': ('fz': 90, 'lh': 3.25,),
+		'h2': ('fz': 46, 'lh': 2,),
+		'h3': ('fz': 32, 'lh': 1.25,),
+		'h4': ('fz': 24, 'lh': 1,),
+		'h5': ('fz': 20, 'lh': 1,),
+		'h6': ('fz': 16, 'lh': 1,),
+		'p': ('fz': 16, 'lh': 1,),
 	),
 );
+
+/*——————————————————————————————————————————
+/  Font Declarations & Sizes
+——————————————————————————————————————————*/
+
+$border-radius: 3px;
 
 /*——————————————————————————————————————————————————————————————————————————————
 /  MIXINS
@@ -94,8 +116,7 @@ $header-sizes-and-line-heights: (
 /  Button Mixins
 ——————————————————————————————————————————————————————————*/
 .btn {
-	$module-prefix: '.btn';
-	@extend %f_fontname;
+	$module-prefix: '.btn';	
 	display: inline-block;
 	font-size: scut-em(20);
 	padding: scut-em(16, 20) scut-em(24, 20) scut-em(12, 20);
@@ -119,51 +140,79 @@ $header-sizes-and-line-heights: (
 	$module-prefix: '.btn';
 
 	&--isNavy {
-		@include btn(#fff, $navy, #fff, $gold-peach);
+		@include btn(#fff, $navy, #fff, $blue);
 		border: 2px solid $navy;
 
 		&:hover {
-			border-color: lighten($gold-peach, 15%);
+			border-color: lighten($blue, 15%);
 		}
 
-		&#{$module-prefix}--isEmpty {
+		&#{$module-prefix}--isHollow {
 			background-color: transparent;
 			border: 2px solid $navy;
 			color: $navy;
 		}
 	}
+	&--isNavyHollow {
+
+	}
+	&--isSmall {
+		font-size: 12px;
+	}
+	&--isHollow {
+		background-color: transparent;
+		border: 3px solid #000;
+	}
+	&--isCapsuleLeft {
+
+	}
+	&--isCapsuleRight {
+
+	}
+
 }
 
 /*——————————————————————————————————————————————————————————
 /  HEADER MIXINS
 ——————————————————————————————————————————————————————————*/
-@mixin h1($color: #000) {
-	@include vertical_rhythm(margin-bottom, 1);
+@mixin h1($color: $navy-dark) {
 	color: $color;
 }
 
-@mixin h2($color: #000) {
-	@include vertical_rhythm(margin-bottom, (.5, 1, 1));
+@mixin h2($color: $navy-dark) {
 	color: $color;
 }
 
-@mixin h3($color: #000) {
-	@include vertical_rhythm((margin-bottom), .5);
+@mixin h3($color: $navy-dark, $include-border: true, $border-bottom-color: rgba($blue-light, .15) ) {	
+	color: $color;
+
+	@if true == $include-border {
+		border-bottom: 2px solid $border-bottom-color;
+
+		@include css_by_breakpoint((
+			default: (
+				padding-bottom: ( map_get($vertical-rhythm-map, small) * .25 ) - 2px
+			),
+			medium: (
+				padding-bottom: ( map_get($vertical-rhythm-map, medium) * .5 ) - 2px
+			),
+			large: (
+				padding-top: map_get($vertical-rhythm-map, large) * .25,
+				padding-bottom: ( map_get($vertical-rhythm-map, large) * .5 ) - 2px
+			),
+		));
+	}
+}
+
+@mixin h4($color: $navy-dark) {	
 	color: $color;
 }
 
-@mixin h4($color: #000) {
-	@include vertical_rhythm((margin-bottom), .5);
+@mixin h5($color: $navy-dark) {
 	color: $color;
 }
 
-@mixin h5($color: #000) {
-	@include vertical_rhythm((margin-bottom), .5);
-	color: $color;
-}
-
-@mixin h6($color: #000) {
-	@include vertical_rhythm((margin-bottom), .5);
+@mixin h6($color: $navy-dark) {
 	color: $color;
 }
 
@@ -171,7 +220,10 @@ $header-sizes-and-line-heights: (
 /  STYLES
 ——————————————————————————————————————————————————————————————————————————————*/
 body {
+	@extend %f_fira_sans;
 	@include baseline_overlay_by_line_height();
+	color: $navy-dark;
+	padding: 0 1em;
 }
 
 h1 {
@@ -212,20 +264,45 @@ h6 {
 	}
 	// Used for post title
 	h1 {
-
+		@include vertical_rhythm(margin-bottom, (1,.75));
 	}
 	h2 {
 		@include vertical_rhythm(margin-top, (1.5, 2));
-		@include vertical_rhythm(margin-bottom, (1.25, 1, .75, .75));
+		@include vertical_rhythm(margin-bottom, (1));
 	}
 	h3 {
-		@include vertical_rhythm(margin-top, (1.5, 1.5, 1.75, 1.5));
-		@include vertical_rhythm(margin-bottom, (.75, .5, .75, .625));
+		@include vertical_rhythm(margin-top, (.5,1));
+		@include vertical_rhythm(margin-bottom, (.5,1));
 	}
 	h4 {
 
 	}
 	h5 {
+
+		@include vertical_rhythm((margin-bottom, margin-top), (1));
+
+		&.isCallOut {
+			border-radius: $border-radius;
+			border: 2px solid $blue;
+			padding: 1em;
+			color: $blue;
+			font-weight: 400;
+			text-align: center;
+			@include vertical_rhythm(padding, (1));
+
+			@include css_by_breakpoint((
+				default: (
+					padding-bottom: ( map_get($vertical-rhythm-map, small) * 1 ) - 2px
+				),
+				medium: (
+					padding-bottom: ( map_get($vertical-rhythm-map, medium) * 1 ) - 2px
+				),
+				large: (
+					padding-top: ( map_get($vertical-rhythm-map, large) * 1 ) - 2px,
+					padding-bottom: ( map_get($vertical-rhythm-map, large) * 1 ) - 2px
+				),
+			));
+		}
 
 	}
 	h6 {
@@ -233,7 +310,7 @@ h6 {
 	}
 
 	p, ul, ol {
-		@include vertical_rhythm(margin-bottom, 1);
+		@include vertical_rhythm(margin-bottom, (1,.5,.5));
 
 		// This is doubling up a bit-- just for the font-size on the other tags.
 		@include set_responsive_font_sizes_and_line_heights_by_tag($header-sizes-and-line-heights, p);
@@ -259,7 +336,7 @@ h6 {
 		@include vertical_rhythm(margin-top, 0);
 	}
 	li {
-		@include vertical_rhythm(margin-bottom, 1);
+		@include vertical_rhythm(margin-bottom, (1,.5,.5));
 	}
 	ul {
 		margin-left: 1.25rem;
@@ -279,16 +356,18 @@ h6 {
 		margin-left: 2em;
 		margin-right: 2em;
 		padding-left: 1em;
-		border-left: 5px solid #000;
+		border-left: 5px solid $blue-bright;
 	}
 
 	a:not([class]) {
-		color: $navy;
-		border-bottom: 1px solid $navy;
+		color: $blue;
+		border-bottom: 2px solid rgba($blue,.25);
 
 		&:hover {
-			border-bottom-color: $gold-peach;
-			color: $gold-peach;
+			color: $blue-bright;
+		}
+		&:visited {
+			border-bottom-color: rgba(255,255,255,0);
 		}
 	}
 }
